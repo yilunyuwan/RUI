@@ -1,15 +1,16 @@
 const path = require('path')
 
 module.exports = {
-  mode:'production',
   entry:{
     RUI: './lib/index.tsx'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   output:{
     path: path.resolve(__dirname, 'dist/lib'),
     library: 'RUI',
-    libraryTarget: 'umd',
-
+    libraryTarget: 'umd'
   },
   module:{
     rules:[
