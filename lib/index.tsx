@@ -1,13 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
-import Icon from './icon';
+import {HashRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import Button from './button/button';
+import Icon from './icon/icon';
+import DialogExample from './dialog/dialog.example';
+
+const onClick: React.MouseEventHandler = (e) => {
+  console.log(e);
+  console.log(e.target);
+  console.log((e.target as SVGUseElement).href);
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <div>
+        <header>
+          <Icon name='logo' onClick={onClick}/>
+          <span className="logo">RUI</span>
+        </header>
+        
+        <aside>
+          <h2>组件</h2>
+          <ul>
+            <li>
+              <Link to="/button">Button 按钮</Link>
+            </li>
+            <li>
+              <Link to="/dialog">Dialog 对话框</Link>
+            </li>
+            <li>
+              <Link to="/layout">Layout 布局</Link>
+            </li>
+          </ul>
+        </aside>
+
+        <main>
+          <Switch>
+            <Route path='/button'>
+              <Button/>
+            </Route>
+            <Route path='/dialog'>
+              <DialogExample/>
+            </Route>
+            <Route path='/dialog'>
+
+            </Route>
+          </Switch>
+        </main>
+      </div>
+    </Router>
+  );
+};
 
 
-ReactDOM.render((<>
-    <Button/>
-    <Icon name='logo'/>
-</>
-), document.querySelector('#root'));
-// ReactDOM.render((<Icon name='123'/>), document.getElementById('root'));
+ReactDOM.render(<App/>, document.querySelector('#root'));
+
 

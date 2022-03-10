@@ -1,0 +1,44 @@
+@import '../helpers/helper';
+
+.rui-dialog {
+  background: white;  width: 520px;
+  position: fixed; top: 15%; left: 50%; transform: translate(-50%, -50%);
+  border-radius: 2px;
+  &-mask {
+    position: fixed; left: 0; top: 0;
+    height: 100%; width: 100%; background: fade-out(black, 0.5);
+  }
+
+  &-close {
+    .rui-icon{
+      vertical-align: middle;
+      width: 1.5em;
+      height: 1.5em;
+      fill: #666;
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &-main {
+    min-height: 3.5em;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $lighter-color;
+    border-bottom: 1px solid $lighter-color;
+  }
+
+  &-footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
