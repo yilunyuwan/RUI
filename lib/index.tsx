@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import Button from './button/button';
 import Icon from './icon/icon';
 import DialogExample from './dialog/dialog.example';
+import ButtonExample from './button/button.example';
+import './index.scss'
 
 const onClick: React.MouseEventHandler = (e) => {
   console.log(e);
@@ -38,7 +39,7 @@ const App: React.FC = () => {
         <main>
           <Switch>
             <Route path='/button'>
-              <Button/>
+              <ButtonExample/>
             </Route>
             <Route path='/dialog'>
               <DialogExample/>

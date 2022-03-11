@@ -6,12 +6,12 @@
   }
 }
 
-button{
+button[class~='rui-button']{
   box-sizing: border-box;
   &:first-child{
     margin-left:0;
   }
-  &:last-child {
+  &:last-child{
     margin-right:0;
   }
 }

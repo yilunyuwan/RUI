@@ -1,20 +1,25 @@
 @import '../helpers/helper';
 
 .rui-dialog {
-  background: white;  width: 520px;
+  background: white;  width: 520px;  border-radius: 2px;
   position: fixed; top: 15%; left: 50%; transform: translate(-50%, -50%);
-  border-radius: 2px;
+  z-index: 2;
   &-mask {
     position: fixed; left: 0; top: 0;
     height: 100%; width: 100%; background: fade-out(black, 0.5);
+    z-index: 1;
   }
 
   &-close {
+    color: #666;
     .rui-icon{
       vertical-align: middle;
       width: 1.5em;
       height: 1.5em;
-      fill: #666;
+    }
+    &:hover{
+      cursor: pointer;
+      color: #333;
     }
   }
 
@@ -25,6 +30,7 @@
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
+    border-bottom: 1px solid $gray-1;
   }
 
   &-main {
@@ -32,13 +38,12 @@
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    border-top: 1px solid $lighter-color;
-    border-bottom: 1px solid $lighter-color;
   }
 
   &-footer {
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
+    border-top: 1px solid $gray-1;
   }
 }
