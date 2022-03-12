@@ -1,0 +1,26 @@
+.rui-layout {
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+  }
+
+  &-content {
+    flex-grow: 1;
+  }
+
+  &-footer {
+  }
+
+  &-aside {
+  }
+
+  &-hasAside {
+    flex-direction: row;
+  }
+
+  & & {
+    flex-grow: 1;
+  }
+
+}

@@ -5,6 +5,7 @@ import Icon from './icon/icon';
 import DialogExample from './dialog/dialog.example';
 import ButtonExample from './button/button.example';
 import './index.scss'
+import LayoutExample from './layout/layout.example';
 
 const onClick: React.MouseEventHandler = (e) => {
   console.log(e);
@@ -44,8 +45,8 @@ const App: React.FC = () => {
             <Route path='/dialog'>
               <DialogExample/>
             </Route>
-            <Route path='/dialog'>
-
+            <Route path='/layout'>
+              <LayoutExample/>
             </Route>
           </Switch>
         </main>

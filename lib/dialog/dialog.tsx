@@ -1,8 +1,9 @@
-import React, {MouseEventHandler, ReactElement} from 'react';
+import React, {MouseEventHandler, ReactElement, ReactNode} from 'react';
 import './dialog.scss';
 import Icon from '../icon/icon';
 import ReactDOM from 'react-dom';
 import Button from '../button/button';
+import {scopedClassMaker} from '../helpers/scopedClassMaker';
 
 interface DialogProps {
   visible: boolean;
@@ -12,12 +13,7 @@ interface DialogProps {
 }
 
 const Dialog: React.FC<DialogProps> = (props) => {
-  const scopedClassMaker = (prefix: string) => {
-    return (name?: string) => {
-      return [prefix, name].filter(Boolean).join('-');
-    };
-  };
-  const scopedClass = scopedClassMaker('rui-dialog');
+  const scopedClass= scopedClassMaker('dialog');
   const content = (
     props.visible ?
       <>
@@ -68,11 +64,11 @@ const confirm = (message: string, onOk?: () => void, onCancel?: () => void) => {
   const onClose = customizedComponent('confirm', message, buttons, onCancel);
 };
 
-const modal = (content: ReactElement) => {
+const modal = (content: ReactNode) => {
   return customizedComponent('modal', content);
 };
 
-const customizedComponent = (title:string, content: any, buttons?: ReactElement[], onCancel?: () => void) => {
+const customizedComponent = (title: string, content: any, buttons?: ReactElement[], onCancel?: () => void) => {
   const container = document.createElement('div');
   document.body.append(container);
   const onClose = () => {

@@ -1,0 +1,16 @@
+@import '../helpers/helper.scss';
+
+.h, .f {
+  background: $main-color;
+  color: white;
+  text-align: center;
+
+  padding: 15px 0;
+}
+
+.c { background: lighten($main-color, 20%); color: white;
+  display: flex;justify-content: center; align-items: center;}
+
+.a {background: lighten($main-color, 8%); color: white;
+  padding: 0 15px;
+  display: flex;justify-content: center; align-items: center;}
